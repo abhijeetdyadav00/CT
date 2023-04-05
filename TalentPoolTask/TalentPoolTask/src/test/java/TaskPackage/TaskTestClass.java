@@ -11,6 +11,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -49,17 +50,12 @@ public class TaskTestClass extends Utility{
 	public void beforemethod(){
 			System.out.println("k");
 		
-    	System.setProperty("webdriver.chrome.driver","C:\\Users\\AbhijeetY\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
-    	driver=new ChromeDriver();
-    	System.out.println("k");
+    	System.setProperty("webdriver.msedgedriver.driver","C:\\Users\\AbhijeetY\\Downloads\\edgedriver_win64\\msedgedriver.exe");
+    	driver=new EdgeDriver();
     	
 		driver.get("https://onlinect.sharepoint.com/sites/interct/");
 		driver.manage().timeouts().implicitlyWait(120,TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		System.out.println("now");
-		System.out.println("Hii");
-		
-		
 		
 		first=new Page1(driver);
 		second=new Page2(driver);
