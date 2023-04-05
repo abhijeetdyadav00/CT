@@ -35,28 +35,43 @@ public class TaskTestClass extends Utility{
 	Page6 sixth;
 	
 	
-	@BeforeSuite
-	public void beforesuit() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\AbhijeetY\\Downloads\\chromedriver_win32\\chromedriver.exe");
+//	@BeforeSuite
+//	public void beforesuit() {
+//
+//	}
+	
+//	@BeforeTest
+//	public void beforetest() {
+//
+//	}
+	
+	@BeforeClass
+	public void beforemethod(){
+			System.out.println("k");
+		
+    	System.setProperty("webdriver.chrome.driver","C:\\Users\\AbhijeetY\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
     	driver=new ChromeDriver();
+    	System.out.println("k");
+    	
 		driver.get("https://onlinect.sharepoint.com/sites/interct/");
 		driver.manage().timeouts().implicitlyWait(120,TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-	}
-	
-	@BeforeTest
-	public void beforetest() {
+		System.out.println("now");
+		
+		
+		
 		first=new Page1(driver);
 		second=new Page2(driver);
 		third=new Page3(driver);
 		fourth=new Page4(driver);
 		fifth=new Page5(driver);
 		sixth=new Page6(driver);
-	}
-	
-	@BeforeClass
-	public void beforemethod(){
-	
+		
+		
+		
+		
+		
+		
 		first.firstpage();
 		second.secondpage();
 		third.thirdpage();
