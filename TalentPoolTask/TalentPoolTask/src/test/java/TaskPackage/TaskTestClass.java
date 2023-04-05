@@ -36,18 +36,9 @@ public class TaskTestClass extends Utility{
 	Page6 sixth;
 	
 	
-//	@BeforeSuite
-//	public void beforesuit() {
-//
-//	}
-	
-//	@BeforeTest
-//	public void beforetest() {
-//
-//	}
-	
-	@BeforeClass
-	public void beforemethod(){
+	@BeforeSuite
+	public void beforesuit() {
+		
 			System.out.println("k");
 		
     	System.setProperty("webdriver.msedgedriver.driver","C:\\Users\\AbhijeetY\\Downloads\\edgedriver_win64\\msedgedriver.exe");
@@ -56,7 +47,11 @@ public class TaskTestClass extends Utility{
 		driver.get("https://onlinect.sharepoint.com/sites/interct/");
 		driver.manage().timeouts().implicitlyWait(120,TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		
+
+	}
+	
+	@BeforeTest
+	public void beforetest() {
 		first=new Page1(driver);
 		second=new Page2(driver);
 		third=new Page3(driver);
@@ -64,20 +59,21 @@ public class TaskTestClass extends Utility{
 		fifth=new Page5(driver);
 		sixth=new Page6(driver);
 		
-		
-		
-		
-		
-		
-		first.firstpage();
-		second.secondpage();
-		third.thirdpage();
-		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+	}
+	
+	@BeforeClass
+	public void beforemethod(){
+
+
+//		first.firstpage();
+//		second.secondpage();
+//		third.thirdpage();
+//		
+//		try {
+//			Thread.sleep(3000);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 		fourth.fourthpage(driver);
 
 		ArrayList<String> addr=new ArrayList<String>(driver.getWindowHandles());
