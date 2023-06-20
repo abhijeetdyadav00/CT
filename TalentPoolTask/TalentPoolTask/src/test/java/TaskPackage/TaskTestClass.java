@@ -18,6 +18,10 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import TaskMainPackage.Page1;
 import TaskMainPackage.Page2;
 import TaskMainPackage.Page3;
@@ -35,9 +39,17 @@ public class TaskTestClass extends Utility{
 	Page5 fifth;
 	Page6 sixth;
 	
+	static ExtentTest test;
+	static ExtentHtmlReporter reporter;
 	
 	@BeforeSuite
 	public void beforesuit() {
+		//Extend report Code
+		reporter = new ExtentHtmlReporter("test-output/ExtendReport/Extent.html");
+		ExtentReports extend = new ExtentReports();
+		extend.attachReporter(reporter);
+		
+		
 		
 			System.out.println("k");
 		
@@ -113,11 +125,11 @@ public class TaskTestClass extends Utility{
 		js.executeScript("window.scrollBy(0,200)");	
 		
 		
-		try {
-			Utility.screenShot(driver, "test2");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			Utility.screenShot(driver, "test2");
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 	
 	
@@ -127,11 +139,11 @@ public class TaskTestClass extends Utility{
 		sixth.remove(driver,"[3]");
 		sixth.remove(driver, "[2]");
 
-		try {
-			Utility.screenShot(driver, "test3");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			Utility.screenShot(driver, "test3");
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 	
 	

@@ -1,5 +1,6 @@
 package Practice;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class String1 {
@@ -154,19 +155,38 @@ public class String1 {
 //		}
 		
 		
-		/////sum of numbers 
-		int a=6769;
-		int num=0;
-		int sum=0;
+//		/////sum of numbers 
+//		int a=6769;
+//		int num=0;
+//		int sum=0;
+//		
+//		while(a!=0) {
+//			num=a%10;
+//			sum=sum+num;
+//			System.out.print(a%10);
+//			a=a/10;	
+//		}
+//		System.out.println();
+//		System.out.println(sum);
 		
-		while(a!=0) {
-			num=a%10;
-			sum=sum+num;
-			System.out.print(a%10);
-			a=a/10;	
+		ArrayList <Integer> a=new ArrayList<Integer>();
+		
+		
+		int [] x={1, 2, 3, 4, 2, 7, 8, 8,3,3,3};
+
+		for(int i=0;i<x.length-1;i++){
+
+			for(int j=i+1;j<x.length;j++){
+			if(x[i]==x[j]){
+			if(!a.contains(x[i])) {
+				a.add(x[i]);
+			}
+		
+			}
+		    }
 		}
-		System.out.println();
-		System.out.println(sum);
+		
+ System.out.println(a);
 		
 		
 
